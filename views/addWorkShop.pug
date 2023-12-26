@@ -1,0 +1,11 @@
+extends layout
+
+block content
+    h1 Add new workshop:
+    form(action="/addWorkshop", method="post")
+        label Workshop Name:
+        input#name(type='text', name='name')
+        label Description:
+        input#description(type='text', name='description')
+        button#addart(type = "button" onclick="submitWorkshop()") Add workshop
+    script(src = "/addWorkShop.js")

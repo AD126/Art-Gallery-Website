@@ -1,0 +1,12 @@
+extends layout
+
+block content
+    h1 Search
+    form(action="/search", method="get")
+        label Enter Medium:
+        input#medium(type='text', name='medium')
+        label Enter Category:
+        input#category(type='text', name='category')
+        button#login(type = "button" onclick="performSearch()") Search
+
+    script(src = "/searchManager.js")

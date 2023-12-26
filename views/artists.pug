@@ -1,0 +1,10 @@
+
+extends layout
+
+block content
+    h1 Our Artists
+    p Select an artist to view their profile and artworks.
+    ul
+        each i in artists
+            li
+                a(href = `/artist/${i._id}`) #{i.Artist}

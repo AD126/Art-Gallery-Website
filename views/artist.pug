@@ -1,0 +1,20 @@
+extends layout
+
+block content
+    h1 Artist Profile
+    h2 Artist Name: #{artist.Artist}
+    h3 Artworks by #{artist.Artist}:
+    ul
+        each i in artworks
+            li
+                a(href = `/gallery/${i._id}`) #{i.Title}
+    h3 Workshops by #{artist.Artist}:
+    ul
+        each i in workshops
+            li
+                a(href = `/workshop/${i._id}`) #{i.name}
+                p Description: #{i.description}
+    button#follow(type = "button" onclick = "followArtist()") Follow
+    script(src = "/followManager.js")
+
+

@@ -1,0 +1,11 @@
+extends layout
+
+block content
+    h1 Login
+    form(action="/login", method="post")
+        label Enter username:
+        input#username(type='text', name='username')
+        label Enter password:
+        input#password(type='password', name='password')
+        button#login(type = "button" onclick="userLogin()") Login
+    script(src = "/loginManager.js")

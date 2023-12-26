@@ -1,0 +1,22 @@
+
+extends layout
+
+block content
+    h1 Title: #{artwork.Title}
+    h3 Artist Name: #{artwork.Artist}
+    h3 Year: #{artwork.Year}
+    h5 Description: #{artwork.Description}
+    h5 Medium: #{artwork.Medium}
+    h5 Category: #{artwork.Category}
+    img(src= artwork.Poster, alt='Art Work', width = 700 vw, height = 800 vw; position: "absolute")
+    h3 Like
+    button#like(type = "button" onclick="likeArt()") Like
+    h3 Add review:
+    form(action="/comments", method="post")
+        input#comments(type='text', name='comments')
+        button#submit(type = "button" onclick="postComment()") Comment
+    h3 Reviews
+    ul
+    each j in reviews 
+        li #{j}
+    script(src = "/galleryManager.js")

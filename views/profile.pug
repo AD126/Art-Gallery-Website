@@ -1,0 +1,26 @@
+extends layout
+
+block content
+    h1 Account Type:
+    if userInfo.artists 
+        h1 Artist 
+    else
+        h1 Patron 
+    button#switch(type = "button" onclick="switchUserAccount()") Switch Account
+    h1 Likes
+    each i in likedArtworks
+        h5 Artwork: #{i.title}
+        button#a(type = "button" onclick=`removeUserLike('${i.title}')`) Remove
+    h1 Reviews
+    each i in reviewedArtworks 
+        h5 Comments: #{i.comments}
+        button#b(type = "button" onclick=`removeUserComment('${i.comments}')`) Remove 
+    h1 Followed
+    each i in followedArtists    
+        h5 Artist Name: #{i.followed}
+        h5 Notification:
+        each j in i.notifications 
+            h5 #{j}
+        button#unfollow(type = "button" onclick=`unfollowArtist('${i._id}')`) Unfollow
+    button#logout(type = "button" onclick=`userLogout()`) Log out
+    script(src = "/profileManager.js")

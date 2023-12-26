@@ -1,0 +1,10 @@
+extends layout
+
+block content
+    .container
+        each i in artworks
+            br
+            a(href = `/gallery/${i._id}`)
+                img(src=i.Poster, alt=i.Title, width="200", height="200")
+            br
+

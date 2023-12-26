@@ -1,0 +1,9 @@
+extends layout
+
+block content
+    h1 Our Workshops
+    p Select a workshop to view its details and enroll.
+    ul
+        each i in workshops
+            li
+                a(href = `/workshop/${i._id}`) #{i.name}

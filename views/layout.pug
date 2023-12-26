@@ -1,0 +1,35 @@
+doctype html
+html
+    head
+        title= title
+        link(rel='stylesheet', href='/styles.css')
+    body
+        header
+            .container
+                #branding
+                    h1 #{title}
+                nav
+                    ul
+                        li
+                            a(href='/') Home
+                        li
+                            a(href='/gallery') Gallery
+                        li
+                            a(href='/login') Login
+                        li
+                            a(href='/newaccount') New Account
+                        li
+                            a(href='/artistPage') Artists
+                        li
+                            a(href='/addArt') Add Art
+                        li
+                            a(href='/addWorkShop') Add Workshop
+                        li
+                            a(href='/workshop') Workshops
+                        li
+                            a(href='/search') Search
+                        li
+                            a(href='/profile') Profile
+        block content
+        footer
+            p Copyright © 2023 Ammtoje Dahbia

@@ -1,0 +1,7 @@
+extends layout
+
+block content
+    h1 Workshop Name: #{workshop.name}
+    h5 Description: #{workshop.description}
+    button#enroll(type = "button" onclick="enrollInWorkshop()") Enroll
+    script(src = "/enrollManager.js")
